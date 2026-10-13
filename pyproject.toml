@@ -1,7 +1,7 @@
 [project]
 name = "spendlog"
 version = "0.1.0"
-description = "Expense tracker for Telegram: type what you spent, see where the money went in a Mini App"
+description = "Учёт расходов в Telegram с мини-приложением"
 readme = "README.md"
 license = "MIT"
 keywords = ["telegram", "bot", "mini-app", "expense-tracker", "budget", "fastapi", "aiogram"]
