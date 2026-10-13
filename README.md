@@ -7,7 +7,10 @@
 Учёт расходов прямо в Telegram. Пишете боту «250 такси», он сам относит трату к нужной категории,
 а в мини-приложении видно, куда ушли деньги за месяц.
 
-<p align="center"><img src="docs/mini-app.jpg" alt="Мини-приложение spendlog" width="320"></p>
+<p align="center">
+  <img src="docs/demo.gif" alt="spendlog в чате Telegram" width="300">
+  <img src="docs/mini-app.jpg" alt="Мини-приложение spendlog" width="300">
+</p>
 
 ## Как пользоваться
 
