@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>spendlog</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main class="app" hidden>
+    <header class="month">
+      <button class="month__step" data-step="-1" aria-label="Previous month">‹</button>
+      <h1 class="month__title"></h1>
+      <button class="month__step" data-step="1" aria-label="Next month">›</button>
+    </header>
+
+    <section class="total">
+      <div class="total__amount"></div>
+      <svg class="donut" viewBox="0 0 120 120" aria-hidden="true"></svg>
+    </section>
+
+    <ul class="legend"></ul>
+
+    <section class="days">
+      <svg class="bars" preserveAspectRatio="none" aria-hidden="true"></svg>
+    </section>
+
+    <section class="history"></section>
+  </main>
+
+  <p class="notice" hidden></p>
+
+  <template id="expense-row">
+    <li class="expense">
+      <span class="expense__dot"></span>
+      <span class="expense__text">
+        <span class="expense__note"></span>
+        <span class="expense__meta"></span>
+      </span>
+      <span class="expense__amount"></span>
+      <button class="expense__delete" aria-label="Delete">×</button>
+    </li>
+  </template>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

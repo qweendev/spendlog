@@ -1,0 +1,53 @@
+[project]
+name = "spendlog"
+version = "0.1.0"
+description = "Expense tracker for Telegram: type what you spent, see where the money went in a Mini App"
+readme = "README.md"
+license = "MIT"
+keywords = ["telegram", "bot", "mini-app", "expense-tracker", "budget", "fastapi", "aiogram"]
+authors = [
+    { name = "qweendev", email = "120177743+qweendev@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "aiogram>=3.31.0",
+    "aiosqlite>=0.22.1",
+    "fastapi>=0.143.0",
+    "pydantic-settings>=2.15.0",
+    "sqlalchemy[asyncio]>=2.1.4",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+spendlog = "spendlog.__main__:run"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "mypy>=2.4.0",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.17.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "RUF", "ASYNC", "PT", "RET", "PL", "N"]
+# RUF001 flags every Cyrillic letter, the bot speaks Russian on purpose.
+# SIM905 wants keyword lists as list literals, they read better as plain text.
+ignore = ["PLR0913", "PLR2004", "RUF001", "SIM905"]
+
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
